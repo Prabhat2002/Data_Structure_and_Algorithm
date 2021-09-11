@@ -1,0 +1,13 @@
+class Solution{
+  public:
+    int MissingNumber(vector<int>& a, int n) 
+    {
+        int total=1;
+        for (int i=2; i<=n; i++)
+        {
+           total=total+i;
+           total=total- a[i-2];
+        }
+      return total;
+    }
+};
