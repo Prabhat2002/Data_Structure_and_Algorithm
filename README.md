@@ -2,4 +2,6 @@
 # LEETCODE
 # Datastructure
 # Algorithm
+# C++
+# Java
 
