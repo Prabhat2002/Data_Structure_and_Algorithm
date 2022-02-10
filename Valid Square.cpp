@@ -1,0 +1,27 @@
+class Solution 
+{
+ public:
+   double dist1(vector<int>& c1, vector<int>& c2)
+    {
+        int a = c1[0] - c2[0];
+        int b = c1[1] - c2[1];
+        return sqrt(a*a + b*b);
+    }
+    
+    bool validSquare(vector<int>& p1, vector<int>& p2, vector<int>& p3, vector<int>& p4) 
+    {
+        vector<vector<int>>points={p1, p2, p3, p4};
+        set<double>st;
+        for(int i=0;i<4;i++)
+        {
+            for(int j=i+1;j<4;j++)
+            {
+                double dist=dist1(points[i], points[j]);
+                if(dist==0)
+                    return false;
+                st.insert(dist);
+            }
+        }
+        return st.size()==2;
+    }
+};
